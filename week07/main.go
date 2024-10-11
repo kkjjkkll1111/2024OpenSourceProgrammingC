@@ -5,18 +5,25 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"strconv"
+	"strings"
 )
 
 func main() {
+	fmt.Print("Input your score : ")
 	in := bufio.NewReader(os.Stdin)
-	fmt.Print("Input your name : ")
-	name, err := in.ReadString('\n')
+	i, err := in.ReadString('\n')
 
-	if err != nil{
+	if err != nil {
 		log.Fatal(err)
-	} else{
-		fmt.Println(name)
 	}
-	
-	
+	i = strings.TrimSpace(i)                // 줄바꿈등 제거. 파이썬 strip 함수와 비슷
+	score, _ := strconv.ParseInt(i, 16, 32) //16진 정수형(32bit)으로 변환
+	if score >= 60 {
+		fmt.Println("A")
+		fmt.Printf("%d\n", score)
+	} else {
+		fmt.Println("BCDF")
+	}
+
 }
