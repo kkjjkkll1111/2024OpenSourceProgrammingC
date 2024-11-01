@@ -32,15 +32,15 @@ func main() {
 		isPrime = true
 	} else if n % 2 == 0{ // All even numbers except 2 are not prime numbers 
 		isPrime = false
-	} else {
-		j := 2
+	} else { //odd number
+		j := 3 // start value
 		for j <= int(math.Sqrt(float64(n))) {
 			if n%j == 0 {
 				isPrime = false
 				break //performance up
 			}
 			fmt.Printf("%d ", j)
-			j++
+			j = j + 2 //increment
 		}
 	}
 	
