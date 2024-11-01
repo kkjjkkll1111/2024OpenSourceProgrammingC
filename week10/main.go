@@ -25,14 +25,15 @@ func main() {
 
 	var isPrime bool = true
 
-	// bug fix
-	if n <= 1 { //A prime number is a natural number greater than 1 that is not a product of two smaller natural numbers.
+	
+	if n <= 1 {
 		isPrime = false
 	} else {
 		j := 2
 		for j < n {
 			if n%j == 0 {
 				isPrime = false
+				break //performance up
 			}
 			j++
 		}
