@@ -12,6 +12,11 @@ func main() {
 	fmt.Printf("%#v\n", scores)
 	fmt.Println(scores)
 
+	// for i := 0; i <= len(scores); i++ { //0 90 0 panic: runtime error: index out of range [3] with length 3
+	for i := 0; i<len(scores); i++{
+		fmt.Printf("%d ", scores[i])
+	}
+
 	// var dates [3]time.Time
 	// dates[1] = time.Unix(1947200001, 0)
 	// fmt.Println(dates[1])
@@ -25,12 +30,18 @@ func main() {
 	// 	time.Unix(1947200001, 0), //need comma
 	// }
 	// fmt.Println(dates[0], dates[1], dates[2])
-
+	fmt.Println()
 	dates := [3]time.Time{
 		time.Unix(0, 0),
 		time.Unix(1, 0),
 		time.Unix(1947200001, 0)}
-	fmt.Println(dates[0], dates[1], dates[2])
-	fmt.Printf("%#v\n", dates)
-	fmt.Println(dates)
+	// fmt.Println(dates[0], dates[1], dates[2])
+	// fmt.Printf("%#v\n", dates)
+	// fmt.Println(dates)
+	// for i, date := range dates{
+	// 	fmt.Println(i, date)
+	// }
+	for _, date := range dates{   //like python style, SAFE!
+		fmt.Println(date)
+	}
 }
